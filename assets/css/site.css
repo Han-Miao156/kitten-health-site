@@ -1,0 +1,279 @@
+/* 城市家养幼猫高发疾病现状及防控对策研究 —— 站点样式 */
+:root {
+  --brand: #247cff;
+  --brand-dark: #145fcc;
+  --brand-soft: #eaf2ff;
+  --ink: #1b2430;
+  --ink-2: #3a4654;
+  --muted: #6c7a8a;
+  --line: #e5ebf3;
+  --bg: #f6f9fd;
+  --white: #ffffff;
+  --warn: #e8590c;
+  --warn-soft: #fff2e8;
+  --ok: #1f9d55;
+  --ok-soft: #e8f7ef;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(24, 54, 96, 0.08);
+  --shadow-sm: 0 4px 14px rgba(24, 54, 96, 0.07);
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--white);
+  font-family: "Open Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { color: var(--brand-dark); }
+
+h1, h2, h3, h4 { margin: 0 0 14px; line-height: 1.3; color: var(--ink); letter-spacing: 0.2px; }
+h1 { font-size: 42px; font-weight: 800; }
+h2 { font-size: 30px; font-weight: 800; }
+h3 { font-size: 21px; font-weight: 700; }
+h4 { font-size: 17px; font-weight: 700; }
+p { margin: 0 0 14px; color: var(--ink-2); }
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+
+/* ---------- 导航 ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; gap: 26px; height: 74px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--ink); font-size: 17px; letter-spacing: 0.3px; }
+.brand .mark {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: linear-gradient(135deg, #247cff, #59a7ff);
+  display: grid; place-items: center; color: #fff; font-size: 16px;
+  box-shadow: 0 6px 14px rgba(36, 124, 255, 0.3);
+}
+.brand small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--ink-2); font-size: 15px; font-weight: 600; padding: 9px 14px; border-radius: 10px;
+  transition: background 0.18s, color 0.18s;
+}
+.nav-links a:hover { background: var(--brand-soft); color: var(--brand); }
+.nav-links a.active { background: var(--brand); color: #fff; box-shadow: 0 6px 14px rgba(36, 124, 255, 0.28); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 64px 0 56px; background:
+  radial-gradient(900px 420px at 85% -10%, #e8f1ff 0%, rgba(232, 241, 255, 0) 60%),
+  radial-gradient(700px 380px at -10% 10%, #eef7f3 0%, rgba(238, 247, 243, 0) 55%), var(--bg); border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 48px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 1.6px;
+  color: var(--brand); background: var(--brand-soft); padding: 7px 14px; border-radius: 999px; margin-bottom: 18px;
+}
+.hero h1 { font-size: 44px; margin-bottom: 18px; }
+.hero h1 em { font-style: normal; color: var(--brand); }
+.hero .lead { font-size: 17px; color: var(--muted); max-width: 560px; }
+.hero-actions { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 12px;
+  font-weight: 700; font-size: 15px; border: 1px solid transparent; transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn-primary { background: var(--brand); color: #fff; box-shadow: 0 10px 22px rgba(36, 124, 255, 0.28); }
+.btn-primary:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 14px 26px rgba(36, 124, 255, 0.34); }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-sm); }
+.btn-ghost:hover { color: var(--brand); border-color: #c9dcff; }
+
+.hero-figure { position: relative; }
+.hero-figure img { width: 100%; height: 460px; object-fit: cover; object-position: center 32%; border-radius: 26px; box-shadow: 0 24px 50px rgba(20, 52, 96, 0.18); }
+.hero-badge {
+  position: absolute; left: -18px; bottom: 26px; background: #fff; border-radius: 16px; padding: 14px 18px;
+  box-shadow: var(--shadow); display: flex; gap: 12px; align-items: center; border: 1px solid var(--line);
+}
+.hero-badge .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px var(--ok-soft); }
+.hero-badge b { display: block; font-size: 15px; }
+.hero-badge span { font-size: 12px; color: var(--muted); }
+
+/* ---------- 通用区块 ---------- */
+.section { padding: 76px 0; }
+.section.alt { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-head { max-width: 760px; margin-bottom: 38px; }
+.section-head .kicker { margin-bottom: 12px; }
+.section-head p { color: var(--muted); font-size: 16px; margin: 0; }
+
+/* ---------- 数据 ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.stat {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.stat .num { font-size: 34px; font-weight: 800; color: var(--brand); line-height: 1.1; }
+.stat .num small { font-size: 15px; font-weight: 700; margin-left: 4px; color: var(--ink-2); }
+.stat .label { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+/* ---------- 四步路径 ---------- */
+.path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.path-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px;
+  box-shadow: var(--shadow-sm); position: relative; transition: transform 0.18s, box-shadow 0.18s;
+  display: flex; flex-direction: column;
+}
+.path-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.path-card .step { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; color: var(--brand); }
+.path-card h3 { margin: 10px 0 8px; }
+.path-card p { font-size: 14.5px; color: var(--muted); margin-bottom: 18px; }
+.path-card a { margin-top: auto; font-weight: 700; font-size: 14px; }
+.path-card .ico {
+  width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+  background: var(--brand-soft); color: var(--brand); margin-bottom: 14px;
+}
+.path-card .ico svg { width: 22px; height: 22px; }
+
+/* ---------- 疾病卡片 ---------- */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid-3 > *, .grid-2 > *, .path > * { min-width: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.card .thumb { height: 168px; background: #dfe8f5; }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card .body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.card .body p { font-size: 14.5px; color: var(--muted); margin-bottom: 16px; }
+.card .body a { margin-top: auto; font-weight: 700; font-size: 14px; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.tag { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+.tag.ok { background: var(--ok-soft); color: var(--ok); }
+
+/* ---------- 疾病详情 ---------- */
+.disease {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 30px;
+  box-shadow: var(--shadow-sm); margin-bottom: 20px; scroll-margin-top: 96px;
+}
+.disease .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 6px; }
+.disease h3 { margin: 0; }
+.disease .en { font-size: 12px; letter-spacing: 1.4px; color: var(--muted); font-weight: 700; text-transform: uppercase; }
+.disease .meta { display: grid; grid-template-columns: 120px 1fr; gap: 10px 18px; margin: 18px 0 4px; }
+.disease .meta dt { font-size: 13.5px; font-weight: 800; color: var(--ink); }
+.disease .meta dd { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.disease .meta div { display: contents; }
+
+/* ---------- 列表 / 清单 ---------- */
+.checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.checklist li {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px 14px 46px;
+  position: relative; font-size: 15px; color: var(--ink-2); box-shadow: var(--shadow-sm);
+}
+.checklist li::before {
+  content: ""; position: absolute; left: 16px; top: 18px; width: 18px; height: 18px; border-radius: 6px;
+  border: 2px solid #b9c9de; background: #fff;
+}
+.checklist li b { color: var(--ink); }
+
+.bullets { padding-left: 0; list-style: none; margin: 0; }
+.bullets li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--ink-2); font-size: 15px; }
+.bullets li::before { content: ""; position: absolute; left: 4px; top: 10px; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+
+/* ---------- 步骤 ---------- */
+.steps { display: grid; gap: 14px; counter-reset: s; }
+.step-item {
+  display: grid; grid-template-columns: 46px 1fr; gap: 16px; background: #fff; border: 1px solid var(--line);
+  border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-sm);
+}
+.step-item .n {
+  width: 38px; height: 38px; border-radius: 11px; background: var(--brand); color: #fff; font-weight: 800;
+  display: grid; place-items: center; font-size: 15px;
+}
+.step-item h4 { margin: 2px 0 6px; }
+.step-item p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+/* ---------- 时间轴 ---------- */
+.timeline { position: relative; margin: 10px 0 0; padding-left: 30px; }
+.timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(#cfe0ff, #eaf1fb); }
+.tl-item { position: relative; padding: 0 0 26px 0; }
+.tl-item::before {
+  content: ""; position: absolute; left: -27px; top: 5px; width: 14px; height: 14px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--brand); box-shadow: 0 0 0 4px #eaf2ff;
+}
+.tl-item h4 { margin: 0 0 6px; }
+.tl-item p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+/* ---------- 表格 ---------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); background: #fff; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 620px; }
+thead th { background: #f2f7ff; color: var(--ink); text-align: left; font-weight: 800; padding: 14px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+tbody td { padding: 13px 16px; border-bottom: 1px solid #f0f4f9; color: var(--ink-2); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #fafcff; }
+
+/* ---------- 提示框 ---------- */
+.note {
+  border-left: 4px solid var(--brand); background: #f4f9ff; padding: 16px 20px; border-radius: 0 14px 14px 0;
+  font-size: 14.5px; color: var(--ink-2);
+}
+.note.warn { border-color: var(--warn); background: var(--warn-soft); }
+.note.ok { border-color: var(--ok); background: var(--ok-soft); }
+.note b { color: var(--ink); }
+
+/* ---------- 引用 / 结尾 ---------- */
+.cta {
+  background: linear-gradient(135deg, #1b64d8, #247cff 60%, #4d9dff);
+  color: #fff; border-radius: 24px; padding: 46px 44px; box-shadow: 0 24px 50px rgba(20, 70, 160, 0.25);
+}
+.cta h2 { color: #fff; }
+.cta p { color: rgba(255, 255, 255, 0.85); max-width: 640px; }
+.cta .btn-ghost { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: rgba(255, 255, 255, 0.35); }
+
+/* ---------- 页脚 ---------- */
+.site-footer { background: #0f1a2a; color: #b9c6d6; padding: 50px 0 28px; margin-top: 0; }
+.site-footer h4 { color: #fff; font-size: 15px; margin-bottom: 12px; }
+.site-footer a { color: #b9c6d6; }
+.site-footer a:hover { color: #fff; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; }
+.footer-grid p { color: #93a3b6; font-size: 14px; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 30px; padding-top: 18px; font-size: 12.5px; color: #7d8da1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* ---------- 页面头 ---------- */
+.page-hero { padding: 54px 0 44px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.page-hero h1 { font-size: 36px; margin-bottom: 12px; }
+.page-hero p { color: var(--muted); max-width: 720px; margin: 0; }
+.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.crumbs a { color: var(--muted); }
+.crumbs span { margin: 0 6px; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 980px) {
+  .hero-grid { display: block; }
+  .hero-figure { margin-top: 28px; }
+  .hero-figure img { height: 320px; }
+  .stats, .path, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  h1, .hero h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  .nav { height: auto; padding: 12px 0; flex-wrap: wrap; gap: 12px; }
+  .nav-links { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+  .nav-links a { white-space: nowrap; font-size: 14px; }
+  .stats, .path, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .section { padding: 54px 0; }
+  .hero { padding: 40px 0; }
+  .hero-badge { left: 12px; bottom: 12px; }
+  .disease { padding: 22px; }
+  .disease .meta { grid-template-columns: 96px 1fr; }
+  .cta { padding: 30px 24px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
